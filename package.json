@@ -24,5 +24,11 @@
   "bugs": {
     "url": "https://github.com/vasanthk/react-universal-starter/issues"
   },
-  "homepage": "https://github.com/vasanthk/react-universal-starter"
+  "homepage": "https://github.com/vasanthk/react-universal-starter",
+  "dependencies": {
+    "hapi": "^8.8.1",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "react-transmit": "^2.6.3"
+  }
 }
