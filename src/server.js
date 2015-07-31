@@ -7,7 +7,9 @@ import Transmit from 'react-transmit' // Relay-inspired library based on Promise
  * Start Hapi server on port 8000.
  */
 const server = new Server();
-server.connection({port: process.env.PORT || 8000});
+server.connection({ // Set port
+  port: process.env.PORT || 8000
+});
 server.start(function () {
   console.info('==> ✅  Server is listening');
   console.info('==> 🌎Go to ' + server.info.uri.toLowerCase());
@@ -18,7 +20,7 @@ server.start(function () {
  */
 server.route({
   method: '*',
-  path: '/{params*}',
+  path: '/{params*}', // * wildcard allows any number of segments in the url eg. /user/profile/id
   handler: (request, reply) => {
     reply.file('static' + request.path);
   }
@@ -28,15 +30,15 @@ server.route({
  * Endpoint that proxies all GitHub API requests to https://api.github.com.
  */
 server.route({
-  method: "*",
-  path: "/api/github/{path*}",
+  method: '*',
+  path: '/api/github/{path*}',
   handler: {
     proxy: {
       passThrough: true,
       mapUri (request, callback) {
         callback(null, url.format({
-          protocol: "https",
-          host: "api.github.com",
+          protocol: 'https',
+          host: 'api.github.com',
           pathname: request.params.path,
           query: request.query
         }));
@@ -48,8 +50,8 @@ server.route({
 /**
  * Catch dynamic requests here to fire-up React Router.
  */
-server.ext("onPreResponse", (request, reply) => {
-  if (typeof request.response.statusCode !== "undefined") {
+server.ext('onPreResponse', (request, reply) => {
+  if (typeof request.response.statusCode !== 'undefined') {
     return reply.continue();
   }
 
@@ -57,24 +59,24 @@ server.ext("onPreResponse", (request, reply) => {
     Transmit.renderToString(Handler).then(({reactString, reactData}) => {
       let output = (
         `<!doctype html>
-				<html lang="en-us">
+				<html lang='en-us'>
 					<head>
-						<meta charset="utf-8">
+						<meta charset='utf-8'>
 						<title>react-isomorphic-starterkit</title>
-						<link rel="shortcut icon" href="/favicon.ico">
+						<link rel='shortcut icon' href='/favicon.ico'>
 					</head>
 					<body>
-						<div id="react-root">${reactString}</div>
+						<div id='react-root'>${reactString}</div>
 					</body>
 				</html>`
       );
 
-      const webserver = process.env.NODE_ENV === "production" ? "" : "//localhost:8080";
+      const webserver = process.env.NODE_ENV === 'production' ? '' : '//localhost:8080';
       output = Transmit.injectIntoMarkup(output, reactData, [`${webserver}/dist/client.js`]);
 
       reply(output);
     }).catch((error) => {
-      reply(error.stack).type("text/plain").code(500);
+      reply(error.stack).type('text/plain').code(500);
     });
   })
 });
