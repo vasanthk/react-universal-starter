@@ -1,8 +1,56 @@
 # React-Universal-Starter
-Quick start an Universal (isomorphic) React App
+Fully *annotated code* for quick starting an *Universal (isomorphic) React App*.
+Thanks to Rick Wong!
 
-.. In works.. Coming Soon :)
+Universal starterkit with server-side React rendering using 
+[npm](https://www.npmjs.com/), 
+[piping](https://github.com/mdlawson/piping), 
+[webpack](https://webpack.github.io/), 
+[webpack-dev-server](https://github.com/webpack/webpack-dev-server),
+[hapi.js](http://www.hapijs.com/), 
+[babel.js](http://babeljs.io/), 
+[react.js](https://facebook.github.io/react), 
+[react-router](https://github.com/rackt/react-router), 
+[react-hot-loader](https://gaearon.github.io/react-hot-loader), 
+[react-transmit](https://github.com/RickWong/react-transmit),
+[react-inline-css](https://github.com/RickWong/react-inline-css)
 
+## Features
+
+- Fully automated with npm run scripts
+- Server hot reloads with piping and Hapi.js
+- Webpack for watch + production builds
+- React.js + Router on the client and server
+- React Hot Loader for instant client updates
+- Babel.js automatically compiles ES6 + ES7
+- React Transmit to preload on server to client
+- InlineCss-component for styling components
+- Accessibility hints from react-a11y
+
+It just works out-of-the-box.
+
+## Installation
+
+```bash
+	git clone https://github.com/RickWong/react-isomorphic-starterkit.git
+	cd react-isomorphic-starterkit
+	
+	npm install
+	npm run watch     # Yes, ONE command for server AND client development!
+	
+	# production build and run
+	NODE_ENV=production npm run build
+	NODE_ENV=production npm run start  
+```
+
+Go To http://localhost:8000/
+
+## Usage
+
+Run `npm run watch` in your terminal and play with `views/Main.js` to get a feel of
+the server-side rendering and client-side hot updates.
+
+## More info
 ### Dependencies:
 ```babel```: Turns ES6 code into readable vanilla ES5 with source maps
 

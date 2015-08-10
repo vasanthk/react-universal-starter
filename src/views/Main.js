@@ -73,7 +73,7 @@ class Main extends Component {
 
         <h1>
           <img src="/favicon.ico" alt="icon"/>
-          <br/> Welcome to React Isomorphic Starterkit.
+          <br/> Welcome to React Universal Starter.
         </h1>
 
         <h3>Features</h3>
@@ -87,10 +87,6 @@ class Main extends Component {
           <li>React Transmit to preload on server to client</li>
           <li>InlineCss-component for styling components</li>
         </ul>
-        <p>
-          In short – <em>an excellent choice</em>.
-          Ready to start{'?'}
-        </p>
 
         <h3>Community</h3>
 
