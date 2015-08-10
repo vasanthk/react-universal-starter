@@ -32,7 +32,7 @@ It just works out-of-the-box.
 ## Installation
 
 ```bash
-	git clone https://github.com/RickWong/react-isomorphic-starterkit.git
+	git clone https://github.com/vasanthk/react-universal-starter.git
 	cd react-isomorphic-starterkit
 	
 	npm install
