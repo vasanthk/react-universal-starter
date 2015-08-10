@@ -2,12 +2,17 @@ import {Server} from 'hapi';  // hapi enables developers to focus on writing reu
 import React from 'react';  // A JavaScript library for building user interfaces
 import Router from 'react-router';  //  A complete routing solution for React.js.
 import Transmit from 'react-transmit' // Relay-inspired library based on Promises instead of GraphQL.
+import routes from 'views/Routes';
+import url from 'url';
+
+var hostname = process.env.HOSTNAME || 'localhost';
 
 /**
  * Start Hapi server on port 8000.
  */
 const server = new Server();
-server.connection({ // Set port
+server.connection({
+  host: hostname,
   port: process.env.PORT || 8000
 });
 server.start(function () {
