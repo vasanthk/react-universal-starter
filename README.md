@@ -1,5 +1,5 @@
-# React-Universal-Starter
-Fully *annotated code* for quick starting an *Universal (isomorphic) React App*.
+# React Universal Starter
+Fully **annotated code** for quick starting an **Universal (isomorphic) React App**.
 Thanks to Rick Wong!
 
 Universal starterkit with server-side React rendering using 
@@ -43,7 +43,7 @@ It just works out-of-the-box.
 	NODE_ENV=production npm run start  
 ```
 
-Go To http://localhost:8000/
+Go To **http://localhost:8000/**
 
 ## Usage
 
