@@ -33,7 +33,7 @@ It just works out-of-the-box.
 
 ```bash
 	git clone https://github.com/vasanthk/react-universal-starter.git
-	cd react-isomorphic-starterkit
+	cd react-universal-starter
 	
 	npm install
 	npm run watch     # Yes, ONE command for server AND client development!
