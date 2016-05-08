@@ -29,7 +29,7 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
 
     // Assign the module and chunk ids by occurrence count. Ids that are used often get lower (shorter) ids.
-    // This make ids predictable, reduces to total file size and is recommended.
+    // This make ids predictable, reduces the total file size and is recommended.
     new webpack.optimize.OccurenceOrderPlugin(),
 
     // Minimize all JavaScript output of chunks. Loaders are switched into minimizing mode.
